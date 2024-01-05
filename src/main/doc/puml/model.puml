@@ -1,0 +1,57 @@
+@startuml
+class School{
+string schoolname
+Address adress
+ArrayList<Schoolclass> classes
+}
+
+entity Address {
+[lookup_table]
+
+string countrycode
+string streetname
+string country
+int streetnumber
+
+}
+
+class Student {
+string firstname
+string lastname
+Address adress
+ArrayList<Test> tests
+}
+
+class Test{
+Subject testSubject
+int grade
+LocalDateTime testDate
+Teacher correctingTeacher
+}
+
+enum Subject{
+string subjectName
+}
+
+class Teacher{
+string firstname
+string lastname
+Address adress
+ArrayList<Subject> subjects
+}
+class Schoolclass{
+String className
+Teacher classTeacher
+Teacher classTeacherSubstitute
+ArrayList<Student>
+}
+
+School --o Schoolclass: has many
+Schoolclass --o Student : has many
+Student --o Test : has many
+Subject <-- Test : has one
+Schoolclass --> Teacher : has two
+Teacher --o Test: has many
+School -left-> Address : has 1
+Student -up-> Address : has 1
+@enduml
