@@ -52,6 +52,7 @@ Student --o Test : has many
 Subject <-- Test : has one
 Schoolclass --> Teacher : has two
 Teacher --o Test: has many
+Teacher --o Subject: teaches many
 School -left-> Address : has 1
 Student -up-> Address : has 1
 @enduml
