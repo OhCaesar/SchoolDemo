@@ -10,8 +10,8 @@ import java.util.ArrayList;
 @Slf4j
 public record SchoolDto(String name, Address address, ArrayList<Student> students) {
 
-    public SchoolDto(School school){
-        this(school.getName(),school.getSchoolAddress(),school.getStudents());
-        log.info("SchoolDto for Object - {}",school);
+    public SchoolDto(School origin){
+        this(origin.getName(),origin.getSchoolAddress(),origin.getStudents());
+        log.info("SchoolDto for Object - {}",origin);
     }
 }

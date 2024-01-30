@@ -8,9 +8,9 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.ArrayList;
 @Slf4j
 public record SchoolClassDto(String classDefinition, Teacher classTeacher, Teacher substituteClassTeacher, Student studentsRepresentative, ArrayList<Student> students) {
-        public SchoolClassDto(SchoolClass schoolClass){
-                this(schoolClass.getClassDefinition(),schoolClass.getClassTeacher(),schoolClass.getSubstituteClassTeacher(),schoolClass.getStudentsRepresentative(),schoolClass.getStudents());
-                log.info("SchoolClassDto with origin - {} created " , schoolClass);
+        public SchoolClassDto(SchoolClass origin){
+                this(origin.getClassDefinition(),origin.getClassTeacher(),origin.getSubstituteClassTeacher(),origin.getStudentsRepresentative(),origin.getStudents());
+                log.info("SchoolClassDto with origin - {} created " , origin);
         }
 
 }
